@@ -243,7 +243,16 @@ variable so you can use it in Twig::
                 'number' => $number,
             ]);
         }
+
+        public static function getSubscribedServices(): array
+        {
+            return [
+                'twig' => \Twig\Environment::class,
+            ];
+        }
     }
+    
+    The getSubscribedServices method needs to be implemented and proviced the required services that this controller needs
 
 Template files live in the ``templates/`` directory, which was created for you automatically
 when you installed Twig. Create a new ``templates/lucky`` directory with a new
